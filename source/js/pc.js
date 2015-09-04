@@ -86,6 +86,12 @@ define([], function(){
 			slide(idx);
 			Tips.hide();
 		});
+
+		$(".tips-inner-ex a").bind("click", function(){
+			var idx = $(this).index();
+			slide(idx);
+			Tips.hide();
+		});
 	}
 
 	
