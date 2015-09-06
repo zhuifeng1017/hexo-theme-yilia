@@ -17,7 +17,7 @@
           </a>
         <%}%>
       </header>
-      <% if (!index){ %>
+      <% if (!index && config.duoshuo_shortname && post.comments ){ %>
       <div class="article-info article-info-post">
         <%- partial('post/tag') %>
         <%- partial('post/category') %>

@@ -12,6 +12,7 @@
     <%- partial('_partial/after-footer') %>
   </div>
 </body>
+<% if (config.duoshuo_shortname){ %>
 <script type="text/javascript">
   var duoshuoQuery = {short_name:'<%= config.duoshuo_shortname %>'};
   (function() {
@@ -23,4 +24,5 @@
     || document.getElementsByTagName('body')[0]).appendChild(ds);
   })();
 </script>
+<%}%>
 </html>

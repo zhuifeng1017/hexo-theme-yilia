@@ -2,7 +2,12 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta">
-	      	<%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
+            <% if (config.duoshuo_shortname && post.comments ){ %>
+            <a href="<%- url_for(post.path) %>#comments" class="archive-article-date">
+                <span class="ds-thread-count ds-thread-count-ex" data-thread-key="<%= post.source %>" data-count-type="comments"></span>
+            </a>
+            <%}%>
+            <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
         </div>
     	 <%- partial('post/title', {class_name: 'archive-article-title'}) %>
         <div class="article-info info-on-right">
