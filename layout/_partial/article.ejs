@@ -11,6 +11,11 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        <% if (!!index) {%>
+          <a href="<%- url_for(post.path) %>#comments">
+          <span class="ds-thread-count" data-thread-key="<%= post.source %>" data-count-type="comments"></span>
+          </a>
+        <%}%>
       </header>
       <% if (!index){ %>
       <div class="article-info article-info-post">
@@ -55,6 +60,7 @@
 <% } %>
 
 <% if (!index && config.duoshuo_shortname && post.comments){ %>
+<div class="comments" id="comments"></div>
 <%- partial('post/duoshuo', {
     key: post.slug,
     title: post.title,
