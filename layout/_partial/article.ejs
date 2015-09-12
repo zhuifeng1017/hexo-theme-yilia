@@ -13,7 +13,7 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
         <% if (!!index) {%>
           <a href="<%- url_for(post.path) %>#comments">
-          <span class="ds-thread-count" data-thread-key="<%= post.source %>" data-count-type="comments"></span>
+          <span class="ds-thread-count" data-thread-key="<%= encodeURIComponent(post.source) %>" data-count-type="comments"></span>
           </a>
         <%}%>
       </header>

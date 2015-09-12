@@ -4,7 +4,7 @@
       	<div class="article-meta">
             <% if (config.duoshuo_shortname && post.comments ){ %>
             <a href="<%- url_for(post.path) %>#comments" class="archive-article-date">
-                <span class="ds-thread-count ds-thread-count-ex" data-thread-key="<%= post.source %>" data-count-type="comments"></span>
+                <span class="ds-thread-count ds-thread-count-ex" data-thread-key="<%= encodeURIComponent(post.source) %>" data-count-type="comments"></span>
             </a>
             <%}%>
             <%- partial('post/date', {class_name: 'archive-article-date', date_format: 'MMM D'}) %>
